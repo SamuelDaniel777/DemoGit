@@ -11,13 +11,14 @@ import org.hibernate.cfg.Configuration;
 
 public class Save {
 	public static void main(String[] args) {
+		
 		Configuration cfg=new Configuration();
 		cfg.configure().addAnnotatedClass(Person.class);
 		SessionFactory sf=cfg.buildSessionFactory();
 		Session session=sf.openSession();
 		Transaction t = session.beginTransaction();
 		Person p = new Person();
-		
+		System.out.println("hello java");
 		p.setId(1);
 		session.delete(p);
 		t.commit();
